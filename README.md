@@ -5,7 +5,7 @@ Special thanks to [c3h3](https://github.com/c3h3) for his great [course material
 
 [PTT](http://en.wikipedia.org/wiki/PTT_Bulletin_Board_System) is the largest terminal-based bulletin board system (BBS) based in Taiwan. [Beauty Board](https://www.ptt.cc/bbs/Beauty/index.html) is one of the most popular board on it. There are a lot of users post images in it.
 
-This application try to crawle all available images URLs from Beauty Board, store them in database, and you can make your own thing by this dataset. For example, you can make a [website](http://minstrel.tw/beauty) show images.
+This application try to crawl all available images URLs from Beauty Board, store them in database, and you can make your own thing by this dataset. For example, you can make a [website](http://minstrel.tw/beauty) show images.
 
 
 
