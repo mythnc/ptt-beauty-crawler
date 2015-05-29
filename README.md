@@ -25,9 +25,9 @@ There are 2 files: `beauty_crawler.py` and `beauty_query.py`. One for create or 
 
 ## Create dataset
 
-```
-$ python beauty_crawler.py
-``` 
+You can crawl your own dataset by `$ python beauty_crawler.py` 
+
+or restore the existing dataset in `dump/` directory by `$ mongorestore`
 
 ## Update dataset
 
