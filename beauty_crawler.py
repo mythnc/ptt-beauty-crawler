@@ -4,6 +4,7 @@
 from __future__ import print_function
 import datetime
 import sys
+import time
 import requests
 import lxml
 from pyquery import PyQuery as pq
@@ -22,6 +23,7 @@ def get_requests_data(url):
         try:
             r = requests.get(url)
             s = pq(r.text)
+            time.sleep(0.2)
             if error_503 in s('title').text():
                 print('503 error right now')
                 sys.exit(1)
