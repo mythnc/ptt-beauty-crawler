@@ -72,7 +72,7 @@ def get_max_pages(ptt_index_url):
     """
     s = get_requests_data(ptt_index_url)
 
-    pull_right_urls = pq(s('div.btn-group.pull-right > a')[1]).\
+    pull_right_urls = pq(s('div.btn-group.btn-group-paging > a')[1]).\
         attr("href").split("index")[1].split(".")
     max_page = int(pull_right_urls[0])
     return max_page + 1
@@ -86,7 +86,8 @@ def get_all_pages_url(ptt_index_url):
     """
     max_page = get_max_pages(ptt_index_url)
     url_head = ptt_index_url.split('index')[0]
-    all_urls = ["{}index{}.html".format(url_head, i) for i in range(1, max_page)]
+    all_urls = ["{}index{}.html".format(url_head, i)
+                for i in range(1, max_page)]
     all_urls.append(ptt_index_url)
     return all_urls
 
