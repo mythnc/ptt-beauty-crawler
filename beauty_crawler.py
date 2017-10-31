@@ -19,13 +19,19 @@ beauty_url = "http://www.ptt.cc/bbs/Beauty/index.html"
 
 def get_requests_data(url):
     error_503 = '503 Service Temporarily Unavailable'
+    error_500 = '500 - Internal Server Error'
+
     while True:
         try:
             r = requests.get(url)
             s = pq(r.text)
             time.sleep(0.2)
-            if error_503 in s('title').text():
+            title = s('title').text()
+            if error_503 in title:
                 print('503 error right now')
+                sys.exit(1)
+            elif error_500 in title:
+                print('500 error right now')
                 sys.exit(1)
             return s
         except lxml.etree.XMLSyntaxError:
