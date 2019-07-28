@@ -15,6 +15,7 @@ mongo_client = MongoClient()
 ptt_db = mongo_client.beauty_board_db
 article_col = ptt_db.beauty_article_col
 beauty_url = "http://www.ptt.cc/bbs/Beauty/index.html"
+cookies = dict(over18='1')
 
 
 def get_requests_data(url):
@@ -23,7 +24,7 @@ def get_requests_data(url):
 
     while True:
         try:
-            r = requests.get(url)
+            r = requests.get(url, cookies=cookies)
             s = pq(r.text)
             time.sleep(0.2)
             title = s('title').text()
